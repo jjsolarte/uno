@@ -87,7 +87,46 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"></RelativeLayout>
+        android:layout_weight="1"
+        android:background="#eeeeee">
+        <TextView
+            android:id="@+id/mainTxtTitulo"
+            android:text="Estaciones Recientes"
+            android:textSize="30sp"
+            android:textColor="#000"
+            android:layout_margin="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:id="@+id/mainImgImg1"
+            android:src="@mipmap/ic_launcher"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_below="@id/mainTxtTitulo"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"/>
+        <ImageView
+            android:id="@+id/mainImgImg2"
+            android:src="@mipmap/ic_launcher"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_below="@id/mainTxtTitulo"
+            android:layout_toRightOf="@id/mainImgImg1"/>
+        <ImageView
+            android:id="@+id/mainImgImg3"
+            android:src="@mipmap/ic_launcher"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_below="@id/mainImgImg1"
+            android:layout_marginRight="5dp"/>
+        <ImageView
+            android:id="@+id/mainImgImg4"
+            android:src="@mipmap/ic_launcher"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_below="@id/mainImgImg1"
+            android:layout_toRightOf="@id/mainImgImg1"/>
+    </RelativeLayout>
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
