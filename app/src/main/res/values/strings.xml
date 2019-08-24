@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Uno</string>
+    <string name="main_titulo">Lista Principal</string>
+    <string name="main_guardar">Guardar</string>
+    <string name="main_playlist">Playlist</string>
+    <string name="reg_nombre">Nombre</string>
 </resources>

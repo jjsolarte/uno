@@ -3,16 +3,23 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/background_shazam</item>
+        <item name="colorPrimaryDark">@color/background_shazam_dark</item>
+        <item name="colorAccent">@color/accent</item>
     </style>
 
     <style name="ThemeUno" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/sec</item>
+        <item name="colorPrimary">@color/primary</item>
         <item name="colorPrimaryDark">@color/primary</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!-- Shazam theme. -->
+    <style name="AppShazam" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/background_shazam</item>
+        <item name="colorAccent">@color/accent</item>
+    </style>
 </resources>
