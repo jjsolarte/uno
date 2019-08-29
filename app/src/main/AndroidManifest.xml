@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".RegistroActivity"
-            android:theme="@style/AppShazam"></activity>
+            android:theme="@style/AppShazam"></activity><!-- ?>android:parentActivityName=".MainActivity"-->
         <activity android:name=".ListaActivity" />
         <activity android:name=".MainActivity" />
         <activity

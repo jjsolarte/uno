@@ -2,9 +2,12 @@ package co.jjsolarte.uno;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Adapter;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +17,9 @@ import co.jjsolarte.uno.models.Artista;
 public class ListaActivity extends AppCompatActivity {
 
     List<Artista> artistaList;
+
     List<String> listaNombreArtistas;
+
     ListView listView;
 
     @Override
@@ -25,9 +30,19 @@ public class ListaActivity extends AppCompatActivity {
         inicializer();
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1, listaNombreArtistas);
+                android.R.layout.simple_list_item_1,
+                listaNombreArtistas);
 
         listView.setAdapter(adapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(ListaActivity.this,
+                        ""+artistaList.get(position).getNombre()+" / "+position,
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
 

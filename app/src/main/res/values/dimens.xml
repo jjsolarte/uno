@@ -2,4 +2,5 @@
 <resources>
     <dimen name="main_tamaño_titulo">25sp</dimen>
     <dimen name="main_tamaño_subtitulo">20dp</dimen>
+    <dimen name="reg_title_size">30sp</dimen>
 </resources>

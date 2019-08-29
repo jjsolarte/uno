@@ -13,8 +13,8 @@ import co.jjsolarte.uno.models.Artista;
 
 public class RegistroActivity extends AppCompatActivity {
 
-    Button btnRegistrar;
-    EditText edtNombre, edtApellido, edtContaseña, edtCorreo;
+    EditText edtNombre, edtCorreo, edtApellido, edtContraseña;
+    Button btnRegistro;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,24 +27,42 @@ public class RegistroActivity extends AppCompatActivity {
 
     }
 
-    public void onRegistro(View view){
-        Artista artista = new Artista(36413,edtNombre.getText().toString()
-                ,edtApellido.getText().toString(),
-                edtCorreo.getText().toString(),
-                Integer.parseInt(edtContaseña.getText().toString()));
+    public void onRegistrar(View view){
 
-        Toast.makeText(this, "Bienvenido "+edtNombre.getText().toString(), Toast.LENGTH_SHORT).show();
-
-        Intent i = new Intent(this,ListaActivity.class);
-        startActivity(i);
     }
 
     private void inicializer() {
-        btnRegistrar = findViewById(R.id.regBtnRegistrar);
         edtNombre = findViewById(R.id.regEdtNombre);
         edtApellido = findViewById(R.id.regEdtApellido);
         edtCorreo = findViewById(R.id.regEdtCorreo);
-        edtContaseña = findViewById(R.id.regEdtConstraseña);
+        edtContraseña = findViewById(R.id.regEdtConstraseña);
+        btnRegistro = findViewById(R.id.regBtnRegistrar);
+
+        btnRegistro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (edtNombre.getText().toString().trim()!=""
+                        && edtContraseña.getText().toString().trim()!=""){
+                    Artista artista = new Artista();
+                    artista.setNombre(edtNombre.getText().toString());
+                    artista.setApellido(edtApellido.getText().toString());
+                    artista.setCorreo(edtCorreo.getText().toString());
+                    artista.setIdentificacion(Integer.parseInt(edtContraseña.getText().toString()));
+
+                    Intent intent = new Intent(RegistroActivity.this,ListaActivity.class);
+                    startActivity(intent);
+
+                    Toast.makeText(RegistroActivity.this,
+                            "Bienvenido "+edtNombre.getText().toString(),
+                            Toast.LENGTH_SHORT).show();
+
+                }else {
+                    Toast.makeText(RegistroActivity.this,
+                            "Por favor llenar los campos solicitados",
+                            Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 
     public void showToolbar(String title,boolean upButton){
@@ -53,5 +71,6 @@ public class RegistroActivity extends AppCompatActivity {
         getSupportActionBar().setTitle(title);
         getSupportActionBar().setDisplayHomeAsUpEnabled(upButton);
     }
+
 
 }
