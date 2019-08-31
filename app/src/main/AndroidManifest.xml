@@ -9,8 +9,12 @@
         android:roundIcon="@drawable/shazam_icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RegistroActivity"
-            android:theme="@style/AppShazam"></activity><!-- ?>android:parentActivityName=".MainActivity"-->
+        <activity android:name=".LoginActivity"
+            android:theme="@style/AppShazam"></activity>
+        <activity
+            android:name=".RegistroActivity"
+            android:theme="@style/AppShazam"
+            android:parentActivityName=".LoginActivity"/> <!-- ?>android:parentActivityName=".MainActivity" -->
         <activity android:name=".ListaActivity" />
         <activity android:name=".MainActivity" />
         <activity

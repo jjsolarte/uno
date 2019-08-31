@@ -1,6 +1,7 @@
 package co.jjsolarte.uno;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -21,7 +22,7 @@ public class RegistroActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
 
-        showToolbar("Shasena",false);
+        showToolbar("Shasena",true);
 
         inicializer();
 
@@ -49,12 +50,26 @@ public class RegistroActivity extends AppCompatActivity {
                     artista.setCorreo(edtCorreo.getText().toString());
                     artista.setIdentificacion(Integer.parseInt(edtContraseña.getText().toString()));
 
-                    Intent intent = new Intent(RegistroActivity.this,ListaActivity.class);
-                    startActivity(intent);
+                    //Espacio Reservado para el Shared Preferences
+                    SharedPreferences prefs =
+                            getSharedPreferences("MisPreferencias",RegistroActivity.MODE_PRIVATE);
+
+                    SharedPreferences.Editor editor = prefs.edit();
+                    editor.putString("nombre", ""+edtNombre.getText().toString());
+                    editor.putString("contraseña", ""+edtContraseña.getText().toString());
+                    editor.commit();
 
                     Toast.makeText(RegistroActivity.this,
+                            ""+prefs.getString("nombre","Sorry"), Toast.LENGTH_SHORT).show();
+
+                    Intent intent = new Intent(
+                            RegistroActivity.this,ListaActivity.class);
+                    intent.putExtra("nombre",edtNombre.getText().toString());
+                    //startActivity(intent);
+
+                    /*Toast.makeText(RegistroActivity.this,
                             "Bienvenido "+edtNombre.getText().toString(),
-                            Toast.LENGTH_SHORT).show();
+                            Toast.LENGTH_SHORT).show();*/
 
                 }else {
                     Toast.makeText(RegistroActivity.this,

@@ -17,9 +17,7 @@ import co.jjsolarte.uno.models.Artista;
 public class ListaActivity extends AppCompatActivity {
 
     List<Artista> artistaList;
-
     List<String> listaNombreArtistas;
-
     ListView listView;
 
     @Override
@@ -29,11 +27,18 @@ public class ListaActivity extends AppCompatActivity {
 
         inicializer();
 
+        Bundle bundle = getIntent().getExtras();
+
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1,
                 listaNombreArtistas);
 
         listView.setAdapter(adapter);
+
+        if (bundle.getString("nombre")!=null){
+            listaNombreArtistas.add(bundle.getString("nombre"));
+            adapter.notifyDataSetChanged();
+        }
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
