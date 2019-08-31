@@ -8,16 +8,29 @@
     tools:context=".ListaActivity"
     android:orientation="vertical">
 
-    <TextView
-        android:text="Listado de Artistas"
-        android:textSize="30sp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="30dp"
-        android:textStyle="bold"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"/>
-
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:orientation="horizontal">
+        <TextView
+            android:text="Listado de Artistas"
+            android:textSize="30sp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:textStyle="bold"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"/>
+        <ImageView
+            android:id="@+id/listaImg"
+            android:src="@drawable/shazam_icon"
+            android:padding="5dp"
+            android:scaleType="centerCrop"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent" />
+    </LinearLayout>
     <ListView
         android:id="@+id/regList"
         android:layout_width="match_parent"

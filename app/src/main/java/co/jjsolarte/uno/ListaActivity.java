@@ -6,8 +6,11 @@ import android.view.View;
 import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,6 +22,8 @@ public class ListaActivity extends AppCompatActivity {
     List<Artista> artistaList;
     List<String> listaNombreArtistas;
     ListView listView;
+
+    ImageView imgFoto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +60,13 @@ public class ListaActivity extends AppCompatActivity {
         artistaList = new ArrayList<>();
         listaNombreArtistas = new ArrayList<>();
         listView = findViewById(R.id.regList);
+        imgFoto = findViewById(R.id.listaImg);
+
+        //Poner la imagen de Internet
+        Picasso.get()
+                .load("https://elpais.com/cultura/imagenes/2014/03/03/actualidad/1393817213_629655_1393841913_noticia_fotograma.jpg")
+                .into(imgFoto);
+
         llenarLista();
     }
 

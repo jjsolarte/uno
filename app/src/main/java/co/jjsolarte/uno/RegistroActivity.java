@@ -11,6 +11,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import co.jjsolarte.uno.models.Artista;
+import io.realm.Realm;
+import io.realm.RealmResults;
 
 public class RegistroActivity extends AppCompatActivity {
 
@@ -57,15 +59,39 @@ public class RegistroActivity extends AppCompatActivity {
                     SharedPreferences.Editor editor = prefs.edit();
                     editor.putString("nombre", ""+edtNombre.getText().toString());
                     editor.putString("contraseña", ""+edtContraseña.getText().toString());
+                    editor.putBoolean("sesion",true);
                     editor.commit();
 
-                    Toast.makeText(RegistroActivity.this,
-                            ""+prefs.getString("nombre","Sorry"), Toast.LENGTH_SHORT).show();
+                    Realm realm = Realm.getDefaultInstance();
+
+                    /*
+                    realm.beginTransaction();
+                    Artista artista1 = realm.createObject(Artista.class);
+                    artista1.setNombre(edtNombre.getText().toString());
+                    artista1.setIdentificacion(Integer.parseInt(edtContraseña.getText().toString()));
+                    realm.commitTransaction();
+                    */
+
+                    realm.executeTransaction(new Realm.Transaction() {
+                        @Override
+                        public void execute(Realm realm) {
+                            Artista artista1 = realm.createObject(Artista.class);
+                            artista1.setNombre(edtNombre.getText().toString());
+                            artista1.setIdentificacion(Integer.parseInt(edtContraseña.getText().toString()));
+                        }
+                    });
+
+                    RealmResults<Artista> results = realm.where(Artista.class).findAll();
+                    for (Artista artista2 : results){
+                        Toast.makeText(RegistroActivity.this,
+                                ""+artista2.getNombre(),
+                                Toast.LENGTH_SHORT).show();
+                    }
 
                     Intent intent = new Intent(
                             RegistroActivity.this,ListaActivity.class);
                     intent.putExtra("nombre",edtNombre.getText().toString());
-                    //startActivity(intent);
+                    startActivity(intent);
 
                     /*Toast.makeText(RegistroActivity.this,
                             "Bienvenido "+edtNombre.getText().toString(),

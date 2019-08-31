@@ -1,6 +1,8 @@
 package co.jjsolarte.uno.models;
 
-public class Artista {
+import io.realm.RealmObject;
+
+public class Artista extends RealmObject {
 
     private int identificacion;
     private String nombre;
