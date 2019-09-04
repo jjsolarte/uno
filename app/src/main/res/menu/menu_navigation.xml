@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_config"
+        android:title="Configuración"
+        android:icon="@android:drawable/ic_menu_manage">
+    </item>
+    <item android:id="@+id/menu_perfil" android:title="Perfil"
+        android:icon="@android:drawable/ic_menu_crop"></item>
+    <item android:id="@+id/menu_ayuda" android:title="Ayuda"
+        android:icon="@android:drawable/ic_menu_compass"></item>
+</menu>

@@ -62,6 +62,9 @@ public class RegistroActivity extends AppCompatActivity {
                     editor.putBoolean("sesion",true);
                     editor.commit();
 
+                    String nombreRecibido = prefs.getString("nombre","no");
+
+
                     Realm realm = Realm.getDefaultInstance();
 
                     /*

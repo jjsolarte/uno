@@ -13,7 +13,7 @@
         android:layout_height="150dp"
         android:orientation="horizontal">
         <TextView
-            android:text="Listado de Artistas"
+            android:text="@string/listado_de_artistas"
             android:textSize="30sp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="30dp"

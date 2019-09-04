@@ -1,12 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Uno</string>
-    <string name="main_titulo">Lista Principal</string>
-    <string name="main_guardar">Guardar</string>
+    <string name="app_name">One</string>
+    <string name="main_titulo">Main List</string>
+    <string name="main_guardar">Save</string>
     <string name="main_playlist">Playlist</string>
     <string name="reg_nombre">Nombre</string>
     <string name="registro_shasena">Registro Shasena</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="listado_de_artistas">Listado de Artistas</string>
+    <string name="listado_de_artistas">Artists List</string>
 </resources>

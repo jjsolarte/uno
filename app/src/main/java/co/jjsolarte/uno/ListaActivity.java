@@ -53,6 +53,7 @@ public class ListaActivity extends AppCompatActivity {
                 Toast.makeText(ListaActivity.this,
                         ""+artistaList.get(position).getNombre()+" / "+position,
                         Toast.LENGTH_SHORT).show();
+
                 Intent i = new Intent(ListaActivity.this,ContainerActivity.class);
                 startActivity(i);
             }
