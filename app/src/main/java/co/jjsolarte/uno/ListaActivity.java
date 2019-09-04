@@ -1,5 +1,6 @@
 package co.jjsolarte.uno;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -42,6 +43,7 @@ public class ListaActivity extends AppCompatActivity {
 
         if (bundle.getString("nombre")!=null){
             listaNombreArtistas.add(bundle.getString("nombre"));
+            artistaList.add(new Artista(123311,bundle.getString("nombre").toString(),"App","correo@gmail.com",123));
             adapter.notifyDataSetChanged();
         }
 
@@ -51,6 +53,8 @@ public class ListaActivity extends AppCompatActivity {
                 Toast.makeText(ListaActivity.this,
                         ""+artistaList.get(position).getNombre()+" / "+position,
                         Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(ListaActivity.this,ContainerActivity.class);
+                startActivity(i);
             }
         });
 

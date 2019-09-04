@@ -113,5 +113,4 @@ public class RegistroActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(upButton);
     }
 
-
 }
