@@ -25,7 +25,7 @@ public class OnSwipeTouch implements View.OnTouchListener {
 
         @Override
         public boolean onDown(MotionEvent e) {
-            return super.onDown(e);
+            return true;
         }
 
         @Override
